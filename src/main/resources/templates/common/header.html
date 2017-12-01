@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+	<head th:fragment="common-head">
+	    <meta charset="UTF-8"/>
+	    <meta name="viewport"
+	          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+	    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+	    <title>BancoDeTiempoOnline</title>
+	    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs-3.3.7/dt-1.10.15/af-2.2.0/datatables.min.css"/>
+	
+	    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+	    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}"/>
+	    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+	</head>
+	<body>
+		<header id="main-header" th:fragment="common-header">
+		    <nav id="main-navbar-header" class="navbar navbar-default">
+		        <div class="container-fluid">
+		            <!-- Brand and toggle get grouped for better mobile display -->
+		            <div class="navbar-header">
+		                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		                    <span class="sr-only">Toggle navigation</span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                </button>
+		                <a class="navbar-brand" th:href="@{/}">Banco<span>De</span>Tiempo</a>
+		            </div>
+		
+		            <!-- Collect the nav links, forms, and other content for toggling -->
+		            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		                <ul class="nav navbar-nav navbar-left">
+		                    <li sec:authorize="hasAuthority('ADMIN')">
+		                        <a th:href="@{/listaPersonas}">Detalle Cliente</a>
+		                    </li>
+		                    <li sec:authorize="hasAuthority('ADMIN')">
+		                        <a th:href="@{/listaPersonas}">Listado Usuarios</a>
+		                    </li>
+		                    <li sec:authorize="hasAuthority('ADMIN')">
+		                    		<a th:href="@{/listaCreditos}">Listado Creditos</a>
+		                    	</li>
+		                    <li sec:authorize="hasAuthority('ADMIN')">
+		                        <a th:href="@{/listaComercios}">Listado Comercios</a>
+		                    </li>
+		                    <li sec:authorize="hasAuthority('ADMIN')">
+		                    		<a th:href="@{/listaIncidencias}">Incidencias</a>
+		                    	</li>
+		                </ul>
+		                <ul class="nav navbar-nav navbar-right">
+		                    <p class="navbar-text" sec:authorize="${isAuthenticated()}">
+		                        <i class="fa fa-user-o"></i>
+		                        <span></span>
+		                        <span sec:authentication="name">name</span> |
+		                        <span sec:authentication="principal.authorities">[ROLE_USER, ROLE_ADMIN]</span>
+		                    </p>
+		                    <li sec:authorize="${isAuthenticated()}"><a th:href="@{/logout}">Logout</a></li>
+		                    <li sec:authorize="${isAnonymous()}"><a th:href="@{/login}">Login</a></li>
+		                </ul>
+		            </div><!-- /.navbar-collapse -->
+		        </div><!-- /.container-fluid -->
+		    </nav>
+		</header>
+		<div th:fragment="common-scripts">
+		    <script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+		    <script th:src="@{/js/bootstrap.min.js}"></script>
+		    <script type="text/javascript" src="https://cdn.datatables.net/v/bs-3.3.7/dt-1.10.15/af-2.2.0/datatables.min.js"></script>
+		</div>
+	</body>
+</html>

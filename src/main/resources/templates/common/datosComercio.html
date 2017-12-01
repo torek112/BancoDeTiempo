@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head th:replace="common/header :: common-head"></head>
+<body>
+<header th:replace="common/header :: common-header"></header>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-10">
+            <div class="datos-personales">
+                <h2>Datos del comercio</h2>
+                <div class="row options-row">
+                	<form action="#" th:action="@{/actualizaComercio}" th:object="${datosComercio}" method="post" id="myform" name="myform">
+
+	                        <table class="table">
+	                            <tbody>
+	                            <tr>
+	                                <td><label for="idComercio">Comercio</label></td>
+	                                <td><input id="idComercio" name="idComercio" th:value="${comercio.idComercio}" readonly="true"/></td>
+	                            </tr>
+	                            <tr>
+	                                <td><label for="clavePublica">Clave Pública</label></td>
+	                                <td><input id="clavePublica" name="clavePublica" th:value="${comercio.clavePublica}"/></td>
+	                            </tr>
+	                            <tr>
+	                                <td><input type="checkbox" id="escrituraProtegidos" name="escrituraProtegidos"/></td>
+	                                <td><label for="escrituraProtegidos">Habilitar escritura de datos protegidos</label></td>
+	                            </tr>
+	                            <tr>
+	                                <td><label for="clavePrivada">Clave Privada</label></td>
+	                                <td><input id="clavePrivada" name="clavePrivada" th:value="${comercio.clavePrivada}" disabled="true"/></td>
+	                            </tr>
+	                            <tr>
+	                                <td><label for="cif">Clave Privada</label></td>
+	                                <td><input id="cif" name="cif" th:value="cif" disabled="true"/></td>
+	                            </tr>
+	                            <tr>
+	                                <td><label for="cuenta">Cuenta</label></td>
+	                                <td><input id="cuenta" name="cuenta" type="date" th:value="${comercio.cuenta}" disabled="true"/></td>
+	                            </tr>
+	                            </tbody>
+	                            <tfoot>
+			                        <tr>
+			                            <!-- Poner la dirección del proceso de devolución -->
+			                            <td><a id="botonDevolver" class="btn btn-sm btn-success" onclick="document.myform.submit()">Actualizar</a></td>
+			                            <td></td>
+			                        </tr>
+			                    </tfoot>
+	                        </table>
+
+	                </form>
+                </div><!-- row-->               
+            </div> <!-- datos- personales -->
+        </div> <!-- col -->
+    </div> <!-- row -->
+</div> <!-- container -->
+<div th:replace="common/header :: common-scripts"></div>
+<script th:src="@{/js/datosComercio.js}"></script>
+</body>
+</html>

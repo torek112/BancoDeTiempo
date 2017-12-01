@@ -1,0 +1,177 @@
+/*body {
+    background-color: red;
+}*/
+
+/*#main-header {
+    height: 70px;
+}*/
+
+.page-header h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/****************************************************************************************/
+/* Login Modal */
+/****************************************************************************************/
+.loginmodal-container {
+    padding: 30px;
+    max-width: 350px;
+    width: 100% !important;
+    background-color: #F7F7F7;
+    margin: 0 auto;
+    border-radius: 2px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    font-family: roboto;
+}
+
+.loginmodal-container h1 {
+    text-align: center;
+    font-size: 1.8em;
+    font-family: roboto;
+}
+
+.loginmodal-container input[type=submit] {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.loginmodal-container input[type=text], input[type=password] {
+    height: 44px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 10px;
+    -webkit-appearance: none;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-top: 1px solid #c0c0c0;
+    /* border-radius: 2px; */
+    padding: 0 8px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.loginmodal-container input[type=text]:hover, input[type=password]:hover {
+    border: 1px solid #b9b9b9;
+    border-top: 1px solid #a0a0a0;
+    -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.loginmodal {
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;
+    height: 36px;
+    padding: 0 8px;
+    /* border-radius: 3px; */
+    /* -webkit-user-select: none;
+      user-select: none; */
+}
+
+.loginmodal-submit {
+    /* border: 1px solid #3079ed; */
+    border: 0px;
+    color: #fff;
+    text-shadow: 0 1px rgba(0,0,0,0.1);
+    /*background-color: #4d90fe;*/
+    background-color: rgba(243, 72, 72, 1);
+    padding: 17px 0px;
+    font-family: roboto;
+    font-size: 14px;
+    /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.loginmodal-submit:hover {
+    /* border: 1px solid #2f5bb7; */
+    border: 0px;
+    text-shadow: 0 1px rgba(0,0,0,0.3);
+    /*background-color: #357ae8;*/
+    background-color: rgba(243, 72, 72, 1);
+    /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.loginmodal-container a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 400;
+    text-align: center;
+    display: inline-block;
+    opacity: 0.6;
+    transition: opacity ease 0.5s;
+}
+
+.login-help{
+    font-size: 12px;
+}
+
+/*****************************************************************************
+ * Custom navbar (from builder)
+ *****************************************************************************/
+#main-navbar-header.navbar-default .navbar-brand,
+#main-navbar-header.navbar-default .navbar-text {
+    color: rgba(255, 255, 255, 1);
+    font-weight: normal;
+}
+#main-navbar-header.navbar-default .navbar-brand span {
+    font-weight: bold;
+}
+#main-navbar-header.navbar-default {
+    font-size: 14px;
+    background-color: rgba(243, 72, 72, 1);
+    border-width: 1px;
+    border-radius: 4px;
+}
+#main-navbar-header.navbar-default .navbar-nav>li>a {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(248, 248, 248, 0);
+}
+#main-navbar-header.navbar-default .navbar-nav>li>a:hover,
+#main-navbar-header.navbar-default .navbar-nav>li>a:focus {
+    color: rgba(51, 51, 51, 1);
+    background-color: rgba(248, 248, 248, 0);
+}
+#main-navbar-header.navbar-default .navbar-nav>.active>a,
+#main-navbar-header.navbar-default .navbar-nav>.active>a:hover,
+#main-navbar-header.navbar-default .navbar-nav>.active>a:focus {
+    color: rgba(85, 85, 85, 1);
+    background-color: rgba(231, 231, 231, 1);
+}
+#main-navbar-header.navbar-default .navbar-toggle {
+    border-color: #ddd;
+}
+#main-navbar-header.navbar-default .navbar-toggle:hover,
+#main-navbar-header.navbar-default .navbar-toggle:focus {
+    background-color: #ddd;
+}
+#main-navbar-header.navbar-default .navbar-toggle .icon-bar {
+    background-color: #888;
+}
+#main-navbar-header.navbar-default .navbar-toggle:hover .icon-bar,
+#main-navbar-header.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #6da1c9;
+}
+
+.btn-primary {
+    background-color: #6da1c9;
+    border-color: #6da1c9;
+}
+
+
+.options-row {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.options-row table td {
+    border-top: none !important;
+}
+
+.datos-pago-cuota{
+    margin-top: 10px;
+}
