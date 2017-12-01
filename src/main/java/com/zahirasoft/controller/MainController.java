@@ -16,6 +16,11 @@ public class MainController {
 	public String errorPage() {
 		return "error";
 	}
+
+	@RequestMapping(value="/", method=RequestMethod.GET)
+	public String mainPage() {
+		return "usuario";
+	}
 	
 
 }

@@ -8,4 +8,5 @@ import com.zahirasoft.model.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
 	User findById(Long id);
+	User findByUserName(String username);
 }
