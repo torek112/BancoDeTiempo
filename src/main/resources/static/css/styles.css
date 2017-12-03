@@ -15,13 +15,11 @@
 /* Login Modal */
 /****************************************************************************************/
 .loginmodal-container {
-    padding: 30px;
+    top: 30%;
+    padding: 20px;
     max-width: 350px;
     width: 100% !important;
-    background-color: #F7F7F7;
-    margin: 0 auto;
-    border-radius: 2px;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    margin: 15% auto;
     overflow: hidden;
     font-family: roboto;
 }
@@ -46,8 +44,7 @@
     margin-bottom: 10px;
     -webkit-appearance: none;
     background: #fff;
-    border: 1px solid #d9d9d9;
-    border-top: 1px solid #c0c0c0;
+    border: 1px solid;
     /* border-radius: 2px; */
     padding: 0 8px;
     box-sizing: border-box;
@@ -107,6 +104,7 @@
 }
 
 .login-help{
+    text-align: center;
     font-size: 12px;
 }
 
@@ -118,10 +116,7 @@
     padding: 30px;
     max-width: 350px;
     width: 100% !important;
-    background-color: #F7F7F7;
-    margin: 0 auto;
-    border-radius: 2px;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    margin: 10% auto;
     overflow: hidden;
     font-family: roboto;
 }
@@ -146,8 +141,7 @@
     margin-bottom: 10px;
     -webkit-appearance: none;
     background: #fff;
-    border: 1px solid #d9d9d9;
-    border-top: 1px solid #c0c0c0;
+    border: 1px solid;
     /* border-radius: 2px; */
     padding: 0 8px;
     box-sizing: border-box;
@@ -207,6 +201,7 @@
 }
 
 .register-help{
+    text-align: center;
     font-size: 12px;
 }
 
@@ -254,6 +249,53 @@
 }
 #main-navbar-header.navbar-default .navbar-toggle:hover .icon-bar,
 #main-navbar-header.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #6da1c9;
+}
+
+/*****************************************************************************
+ * Custom footer (from builder)
+ *****************************************************************************/
+#main-navbar-footer.navbar-default .navbar-brand,
+#main-navbar-footer.navbar-default .navbar-text {
+    color: rgba(255, 255, 255, 1);
+    font-weight: normal;
+}
+#main-navbar-footer.navbar-default .navbar-brand span {
+    font-weight: bold;
+}
+#main-navbar-footer.navbar-default {
+    font-size: 14px;
+    background-color: rgba(243, 72, 72, 1);
+    border-width: 1px;
+    border-radius: 4px;
+}
+#main-navbar-footer.navbar-default .navbar-nav>li>a {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(248, 248, 248, 0);
+}
+#main-navbar-footer.navbar-default .navbar-nav>li>a:hover,
+#main-navbar-footer.navbar-default .navbar-nav>li>a:focus {
+    color: rgba(51, 51, 51, 1);
+    background-color: rgba(248, 248, 248, 0);
+}
+#main-navbar-footer.navbar-default .navbar-nav>.active>a,
+#main-navbar-footer.navbar-default .navbar-nav>.active>a:hover,
+#main-navbar-footer.navbar-default .navbar-nav>.active>a:focus {
+    color: rgba(85, 85, 85, 1);
+    background-color: rgba(231, 231, 231, 1);
+}
+#main-navbar-footer.navbar-default .navbar-toggle {
+    border-color: #ddd;
+}
+#main-navbar-footer.navbar-default .navbar-toggle:hover,
+#main-navbar-footer.navbar-default .navbar-toggle:focus {
+    background-color: #ddd;
+}
+#main-navbar-footer.navbar-default .navbar-toggle .icon-bar {
+    background-color: #888;
+}
+#main-navbar-footer.navbar-default .navbar-toggle:hover .icon-bar,
+#main-navbar-footer.navbar-default .navbar-toggle:focus .icon-bar {
     background-color: #6da1c9;
 }
 

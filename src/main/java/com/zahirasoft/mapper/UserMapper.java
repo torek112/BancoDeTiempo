@@ -15,6 +15,7 @@ public class UserMapper {
         userDto.setHours(user.getHours());
         userDto.setLoginDate(user.getLoginDate());
         userDto.setOffers(user.getOffers());
+        userDto.setEmail(user.getEmail());
         return userDto;
     }
 
@@ -26,6 +27,7 @@ public class UserMapper {
         user.setHours(userDto.getHours());
         user.setLoginDate(userDto.getLoginDate());
         user.setOffers(userDto.getOffers());
+        user.setEmail(userDto.getEmail());
         return user;
     }
 

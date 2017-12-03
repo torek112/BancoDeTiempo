@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+	<head th:fragment="common-head">
+	    <meta charset="UTF-8"/>
+	    <meta name="viewport"
+	          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+	    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+	    <title>BancoDeTiempoOnline</title>
+	    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs-3.3.7/dt-1.10.15/af-2.2.0/datatables.min.css"/>
+	
+	    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+	    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}"/>
+	    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+	</head>
+	<body>
+		<footer th:fragment="common-footer" class="navbar navbar-default navbar-fixed-bottom">
+			<nav id="main-navbar-footer" class="navbar navbar-default navbar-fixed-bottom">
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="footer-copyright">
+						<div class="container-fluid navbar-brand">
+							© 2017 Copyright: <a href="@{/}"> bancodetiemponline.com </a>
+						</div>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right">
+							<li sec:authorize="${isAnonymous()}"><a th:href="@{/login}">Ayuda</a></li>
+							<li sec:authorize="${isAnonymous()}"><a th:href="@{/signup?id=0}">Contribuye</a></li>
+						</ul>
+					</div><!-- /.navbar-collapse -->
+				</div><!-- /.container-fluid -->
+			</nav>
+		</footer>
+	</body>
+</html>

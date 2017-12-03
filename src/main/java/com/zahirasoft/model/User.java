@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 import javax.persistence.*;
 
 @Entity
-@Table(name="User")
+@Table(name="Users")
 public class User{
 	
 	/**

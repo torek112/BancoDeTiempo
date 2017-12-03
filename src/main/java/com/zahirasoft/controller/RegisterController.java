@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Timestamp;
+
 @Controller
 public class RegisterController {
 
@@ -26,9 +28,12 @@ public class RegisterController {
 
     @PostMapping("/adduser")
     public String addContact(@ModelAttribute(name="userDto") UserDto userDto, Model model){
-        if(!userService.findByUsername(userDto.getUserName()).getUserName().equals(userDto.getUserName())){
-            model.addAttribute("result", 1);
-            return "succesfullSignup";
+        if(userService.findByUsername(userDto.getUserName()) == null){
+            userDto.setHours(0L);
+            userDto.setLoginDate(new Timestamp(System.currentTimeMillis()));
+            userService.addUser(userDto);
+            model.addAttribute("register", 0);
+            return "login";
         }
         else {
             model.addAttribute("result", 0);
@@ -39,7 +44,6 @@ public class RegisterController {
 
     @RequestMapping("/succesfullSignup")
     public String succesfullSignup(@RequestParam Model model){
-
         return "succesfullSignup";
     }
 

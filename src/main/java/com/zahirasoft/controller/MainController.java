@@ -19,7 +19,7 @@ public class MainController {
 
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String mainPage() {
-		return "usuario";
+		return "completeInfo";
 	}
 	
 
