@@ -1,5 +1,6 @@
 package com.zahirasoft.pruebas;
 
+import com.zahirasoft.dto.UserDto;
 import com.zahirasoft.model.User;
 import com.zahirasoft.repository.UserRepository;
 import com.zahirasoft.service.UserService;
@@ -19,20 +20,20 @@ public class Api {
 
     @RequestMapping(value = "/addUser", method = RequestMethod.GET)
     public void addUser() {
-        User user = new User();
-        user.setUserName("Hector");
-        user.setUserPassword("hector");
-        user.setHours(0L);
-        user.setOffers("Clases programacion");
-        user.setLoginDate(new Timestamp(System.currentTimeMillis()));
-        userService.addUser(user);
+        UserDto userDto = new UserDto();
+        userDto.setUserName("Hector");
+        userDto.setUserPassword("hector");
+        userDto.setHours(0L);
+        userDto.setOffers("Clases programacion");
+        userDto.setLoginDate(new Timestamp(System.currentTimeMillis()));
+        userService.addUser(userDto);
 
     }
 
     @RequestMapping(value = "/deleteUser", method = RequestMethod.GET)
     public void deleteUser() {
-        User user = userService.findUserById(2L);
-        userService.deleteUser(user);
+        UserDto userDto = userService.findUserById(2L);
+        userService.deleteUser(userDto);
     }
 
     @RequestMapping(value = "/userModify", method = RequestMethod.GET)

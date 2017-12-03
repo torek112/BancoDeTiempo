@@ -1,5 +1,7 @@
 package com.zahirasoft.service.impl;
 
+import com.zahirasoft.dto.UserDto;
+import com.zahirasoft.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
@@ -17,28 +19,45 @@ public class UserServiceImpl implements UserService{
 
 	@Autowired
 	private PasswordEncoder passwordEncoder;
+
+	@Autowired
+	private UserMapper userMapper;
 	
 	@Override
-	public User addUser(User user) {
-		User u = userRepository.save(user);
-		user.setUserPassword(passwordEncoder.encode(user.getUserPassword()));
-		return userRepository.save(user);
+	public UserDto addUser(UserDto userDto) {
+		User user = userMapper.convertUserDto2User(userDto);
+		if(userDto == null) {
+			return null;
+		}
+		if(null == findByUsername(user.getUserName())) {
+			user.setUserPassword(passwordEncoder.encode(user.getUserPassword()));
+			user = userRepository.save(user);
+		}
+		return userMapper.convertUser2UserDto(user);
 	}
 
 	@Override
-	public User findUserById(Long id) {
+	public UserDto findUserById(Long id) {
 		// TODO Auto-generated method stub
-		return userRepository.findOne(id);
+		User u = userRepository.findOne(id);
+		UserDto udto = userMapper.convertUser2UserDto(u);
+		return udto;
 	}
 
 	@Override
-	public User findByUsername(String username) {
-		User user = userRepository.findByUserName(username);
-		return user;
+	public UserDto findByUsername(String username) {
+		UserDto userDto = new UserDto();
+		if(null == userRepository.findByUserName(username)) {
+			return null;
+		} else {
+			User user = userRepository.findByUserName(username);
+			return userMapper.convertUser2UserDto(user);
+		}
+
 	}
 
-
-	public void deleteUser(User user) {
+	public void deleteUser(UserDto userDto) {
+		User user = userMapper.convertUserDto2User(userDto);
 		userRepository.delete(user);
 	}
 }

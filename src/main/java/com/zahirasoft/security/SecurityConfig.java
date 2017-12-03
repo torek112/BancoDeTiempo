@@ -38,7 +38,10 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter{
 			"/js/**",
 			"/api/**",
 			"/error/**",
-			"/login"
+			"/login",
+			"/signup",
+			"/succesfullSignup",
+			"/adduser"
 	};
 	
 	@Override

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head th:replace="common/header :: common-head"></head>
+<body>
+<header th:replace="common/header :: common-header"></header>
+
+    <div class="registermodal-container">
+        <h1>Register Your new Account</h1><br/>
+        <form th:action="@{/adduser}" th:object="${userDto}" method="POST">
+            <input type="hidden" th:field="*{id}"></input>
+            <input type="text" name="username" placeholder="Username" th:field="*{userName}" th:value="*{userName}"/>
+            <div th:if="${result == 1}" class="alert alert-succes" role="alert"> Añadido satisfactoriamente</div>
+            <div th:if="${result == 0}" class="alert alert-danger" role="alert"> Error al añadir</div>
+            <input type="password" name="password" placeholder="Password" th:field="*{userPassword}" th:value="*{userPassword}"/>
+            <input type="email" name="email" placeholder="Email" th:field="*{email}" th:value="*{email}"/>
+            <input type="submit" name="signup" class="login registermodal-submit" value="Registrarme"/>
+        </form>
+        <div class="register-help">
+            <a href="#">Register</a> - <a href="#">Forgot Password</a>
+        </div>
+    </div>
+
+    <div th:replace="common/header :: common-scripts"></div><div th:replace="common/header :: common-scripts"></div>
+</body>
+</html>

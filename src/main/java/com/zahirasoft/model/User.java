@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="User")
-public class User implements Serializable{
+public class User{
 	
 	/**
 	 * 
@@ -27,11 +27,22 @@ public class User implements Serializable{
 	@Column(name="hours")
 	private Long hours;
 
+	@Column(name = "email")
+	private String email;
+
 	@Column(name = "offers")
 	private String offers;
 
 	@Column(name = "loginDate")
 	private Timestamp loginDate;
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public Long getId() {
 		return id;
@@ -84,11 +95,12 @@ public class User implements Serializable{
 	public User() {
 	}
 
-	public User(String userName, String userPassword, Long hours, String offers, Timestamp loginDate) {
+	public User(String userName, String userPassword, Long hours, String offers, Timestamp loginDate, String email) {
 		this.userName = userName;
 		this.userPassword = userPassword;
 		this.hours = hours;
 		this.offers = offers;
 		this.loginDate = loginDate;
+		this.email = email;
 	}
 }

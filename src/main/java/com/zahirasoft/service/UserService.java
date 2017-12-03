@@ -1,16 +1,17 @@
 package com.zahirasoft.service;
 
+import com.zahirasoft.dto.UserDto;
 import org.springframework.stereotype.Service;
 
 import com.zahirasoft.model.User;
 
 public interface UserService {
 
-	User addUser(User user);
+	UserDto addUser(UserDto userDto);
 
-	void deleteUser(User user);
+	void deleteUser(UserDto userDto);
 	
-	User findUserById(Long id);
+	UserDto findUserById(Long id);
 
-	User findByUsername(String username);
+	UserDto findByUsername(String username);
 }
