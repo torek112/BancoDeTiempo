@@ -17,7 +17,7 @@ public class RegisterController {
     UserService userService;
 
     @RequestMapping("/signup")
-    private String redirectRegisterForm(@RequestParam(name="id", required = false) Long id, Model model) {
+    private String redirectRegisterForm(@RequestParam(name="idUser", required = false) Long id, Model model) {
         UserDto userDto = new UserDto();
         if(id != 0) {
             userDto = userService.findUserById(id);
@@ -29,8 +29,8 @@ public class RegisterController {
     @PostMapping("/adduser")
     public String addContact(@ModelAttribute(name="userDto") UserDto userDto, Model model){
         if(userService.findByUsername(userDto.getUserName()) == null){
-            userDto.setHours(0L);
-            userDto.setLoginDate(new Timestamp(System.currentTimeMillis()));
+            userDto.setHours(0F);
+            userDto.setFirstTime(true);
             userService.addUser(userDto);
             model.addAttribute("register", 0);
             return "login";

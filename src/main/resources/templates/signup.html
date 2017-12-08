@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-<head th:replace="common/header :: common-head"></head>
+<head th:replace="common/head :: common-head"></head>
 <body>
 <header th:replace="common/header :: common-header"></header>
 
     <div class="registermodal-container">
         <h1>Registrate</h1><br/>
         <form th:action="@{/adduser}" th:object="${userDto}" method="POST">
-            <input type="hidden" th:field="*{id}"></input>
+            <input type="hidden" th:field="*{idUser}"></input>
             <input type="text" name="username" placeholder="Username" th:field="*{userName}" th:value="*{userName}"/>
             <div th:if="${result == 0}" class="alert alert-danger" role="alert"> Este nombre de usuario ya existe</div>
             <input type="password" name="password" placeholder="Password" th:field="*{userPassword}" th:value="*{userPassword}"/>

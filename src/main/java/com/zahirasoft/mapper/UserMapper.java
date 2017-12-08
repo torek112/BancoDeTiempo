@@ -9,25 +9,24 @@ public class UserMapper {
 
     public UserDto convertUser2UserDto(User user) {
         UserDto userDto = new UserDto();
-        userDto.setId(user.getId());
+        userDto.setIdUser(user.getIdUser());
         userDto.setUserName(user.getUserName());
         userDto.setUserPassword(user.getUserPassword());
         userDto.setHours(user.getHours());
         userDto.setLoginDate(user.getLoginDate());
-        userDto.setOffers(user.getOffers());
         userDto.setEmail(user.getEmail());
+        userDto.setFirstTime(user.isFirstTime());
         return userDto;
     }
 
     public User convertUserDto2User(UserDto userDto) {
         User user = new User();
-        user.setId(userDto.getId());
+        user.setIdUser(userDto.getIdUser());
         user.setUserName(userDto.getUserName());
         user.setUserPassword(userDto.getUserPassword());
         user.setHours(userDto.getHours());
-        user.setLoginDate(userDto.getLoginDate());
-        user.setOffers(userDto.getOffers());
         user.setEmail(userDto.getEmail());
+        user.setFirstTime(userDto.isFirstTime());
         return user;
     }
 

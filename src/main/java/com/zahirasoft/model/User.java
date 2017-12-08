@@ -1,6 +1,5 @@
 package com.zahirasoft.model;
 
-import java.io.Serializable;
 import java.sql.Timestamp;
 
 import javax.persistence.*;
@@ -15,8 +14,8 @@ public class User{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="id")
-	private Long id;
+	@Column(name="idUser")
+	private Long idUser;
 	
 	@Column(name="userName")
 	private String userName;
@@ -25,16 +24,24 @@ public class User{
 	private String userPassword;
 
 	@Column(name="hours")
-	private Long hours;
+	private Float hours;
 
 	@Column(name = "email")
 	private String email;
 
-	@Column(name = "offers")
-	private String offers;
-
 	@Column(name = "loginDate")
 	private Timestamp loginDate;
+
+	@Column(name = "firstTime")
+	private boolean firstTime;
+
+	public boolean isFirstTime() {
+		return firstTime;
+	}
+
+	public void setFirstTime(boolean firstTime) {
+		this.firstTime = firstTime;
+	}
 
 	public String getEmail() {
 		return email;
@@ -44,12 +51,12 @@ public class User{
 		this.email = email;
 	}
 
-	public Long getId() {
-		return id;
+	public Long getIdUser() {
+		return idUser;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setIdUser(Long idUser) {
+		this.idUser = idUser;
 	}
 
 	public String getUserName() {
@@ -68,20 +75,12 @@ public class User{
 		this.userPassword = userPassword;
 	}
 
-	public Long getHours() {
+	public Float getHours() {
 		return hours;
 	}
 
-	public void setHours(Long hours) {
+	public void setHours(Float hours) {
 		this.hours = hours;
-	}
-
-	public String getOffers() {
-		return offers;
-	}
-
-	public void setOffers(String offers) {
-		this.offers = offers;
 	}
 
 	public Timestamp getLoginDate() {
@@ -95,12 +94,12 @@ public class User{
 	public User() {
 	}
 
-	public User(String userName, String userPassword, Long hours, String offers, Timestamp loginDate, String email) {
+	public User(String userName, String userPassword, Float hours, String email, boolean firstTime) {
 		this.userName = userName;
 		this.userPassword = userPassword;
 		this.hours = hours;
-		this.offers = offers;
-		this.loginDate = loginDate;
+		this.loginDate = new Timestamp(System.currentTimeMillis());
 		this.email = email;
+		this.firstTime = firstTime;
 	}
 }

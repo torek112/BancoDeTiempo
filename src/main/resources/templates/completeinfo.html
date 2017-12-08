@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head th:replace="common/head :: common-head"></head>
+    <body>
+        <header th:replace="common/header :: common-header"></header>
+        <div th:replace="common/sidebar :: common-sidebar"></div>
+        <div class="container2">
+            <form th:action="@{/completedinfo}" th:object="${offersDto}" method="POST">
+                <input type="hidden" th:field="*{idOffers}"></input>
+                <h1>
+                    <p>Para continuar, rellena la siguiente informacion, por favor.</p>
+                </h1>
+                <br/>
+                <p>
+                    <span sec:authentication="name">name</span>
+                    <span>, si es la pirimera vez que entras, debes incluir algo para compartir con el mundo, indica en que seccion se encontraria</span>
+                </p>
+                <select>
+                    <option value="0">(Ver todas las categor&iacute;as)</option>
+                    <option value="1">Arte</option>
+                    <option value="2">Asesoramientos</option>
+                    <option value="3">Atención a animales</option>
+                    <option value="4">Atención a personas</option>
+                    <option value="5">Cocina y tareas domésticas</option>
+                    <option value="6">Costura</option>
+                    <option value="7">Deportes</option>
+                    <option value="8">Estética</option>
+                    <option value="9">Formación</option>
+                    <option value="10">Idiomas</option>
+                    <option value="11">Informática</option>
+                    <option value="12">Jardinería</option>
+                    <option value="13">Manualidades</option>
+                    <option value="14">Ocio</option>
+                    <option value="15">Reparaciones</option>
+                    <option value="16">Salud</option>
+                    <option value="17">Varios</option>
+                </select>
+                <br/>
+                <br/>
+                <p>A continuacion escribe una pequeña descripcion de lo que tienes para compartir</p>
+                <textarea cols="70" rows="10" type="text" name="hability" placeholder="Tengo esto para compartir" th:field="*{description}"/>
+                <div th:if="${result == 0}" class="alert alert-danger" role="alert"> Debes compartir algo con el resto</div>
+                <br/>
+                <br/>
+                <input type="submit" value="Enviar"/>
+            </form>
+        </div>
+        <footer th:replace="common/footer :: common-footer"></footer>
+    <script>
+        $('.dropdown-toggle').dropdown()
+    </script>
+    </body>
+</html>

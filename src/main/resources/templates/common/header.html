@@ -2,18 +2,7 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-	<head th:fragment="common-head">
-	    <meta charset="UTF-8"/>
-	    <meta name="viewport"
-	          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-	    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-	    <title>BancoDeTiempoOnline</title>
-	    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs-3.3.7/dt-1.10.15/af-2.2.0/datatables.min.css"/>
-	
-	    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
-	    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}"/>
-	    <link rel="stylesheet" th:href="@{/css/styles.css}" />
-	</head>
+	<head th:replace="common/head :: common-head"></head>
 	<body>
 		<header id="main-header" th:fragment="common-header">
 		    <nav id="main-navbar-header" class="navbar navbar-default">
@@ -49,15 +38,10 @@
 		                    	</li>
 		                </ul>
 		                <ul class="nav navbar-nav navbar-right">
-		                    <p class="navbar-text" sec:authorize="${isAuthenticated()}">
-		                        <i class="fa fa-user-o"></i>
-		                        <span></span>
-		                        <span sec:authentication="name">name</span> |
-		                        <span sec:authentication="principal.authorities">[ROLE_USER, ROLE_ADMIN]</span>
-		                    </p>
+							<li sec:authorize="${isAuthenticated()}"><a th:href="@{/userdetails}" sec:authentication="name">name</a></li>
 		                    <li sec:authorize="${isAuthenticated()}"><a th:href="@{/logout}">Logout</a></li>
 		                    <li sec:authorize="${isAnonymous()}"><a th:href="@{/login}">Login</a></li>
-							<li sec:authorize="${isAnonymous()}"><a th:href="@{/signup?id=0}">Registrate</a></li>
+							<li sec:authorize="${isAnonymous()}"><a th:href="@{/signup?idUser=0}">Registrate</a></li>
 		                </ul>
 		            </div><!-- /.navbar-collapse -->
 		        </div><!-- /.container-fluid -->

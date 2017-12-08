@@ -23,7 +23,7 @@ public class Api {
         UserDto userDto = new UserDto();
         userDto.setUserName("Hector");
         userDto.setUserPassword("hector");
-        userDto.setHours(0L);
+        userDto.setHours(0F);
         userDto.setOffers("Clases programacion");
         userDto.setLoginDate(new Timestamp(System.currentTimeMillis()));
         userService.addUser(userDto);

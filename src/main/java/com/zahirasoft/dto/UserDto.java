@@ -4,13 +4,14 @@ import java.sql.Timestamp;
 
 public class UserDto {
 
-    private Long id;
+    private Long idUser;
     private String userName;
     private String userPassword;
-    private Long hours;
+    private Float hours;
     private String offers;
     private Timestamp loginDate;
     private String email;
+    private boolean firstTime;
 
     public String getEmail() {
         return email;
@@ -20,12 +21,12 @@ public class UserDto {
         this.email = email;
     }
 
-    public Long getId() {
-        return id;
+    public Long getIdUser() {
+        return idUser;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdUser(Long idUser) {
+        this.idUser = idUser;
     }
 
     public String getUserName() {
@@ -44,11 +45,11 @@ public class UserDto {
         this.userPassword = userPassword;
     }
 
-    public Long getHours() {
+    public Float getHours() {
         return hours;
     }
 
-    public void setHours(Long hours) {
+    public void setHours(Float hours) {
         this.hours = hours;
     }
 
@@ -68,16 +69,25 @@ public class UserDto {
         this.loginDate = loginDate;
     }
 
+    public boolean isFirstTime() {
+        return firstTime;
+    }
+
+    public void setFirstTime(boolean firstTime) {
+        this.firstTime = firstTime;
+    }
+
     public UserDto() {
     }
 
-    public UserDto(String userName, String userPassword, Long hours, String offers, Timestamp loginDate, String email) {
+    public UserDto(String userName, String userPassword, Float hours, String offers, Timestamp loginDate, String email, boolean firstTime) {
         this.userName = userName;
         this.userPassword = userPassword;
         this.hours = hours;
         this.offers = offers;
         this.loginDate = loginDate;
         this.email = email;
+        this.firstTime = firstTime;
     }
 }
 

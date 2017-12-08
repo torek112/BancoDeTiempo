@@ -219,8 +219,6 @@
 #main-navbar-header.navbar-default {
     font-size: 14px;
     background-color: rgba(243, 72, 72, 1);
-    border-width: 1px;
-    border-radius: 4px;
 }
 #main-navbar-header.navbar-default .navbar-nav>li>a {
     color: rgba(255, 255, 255, 1);
@@ -266,8 +264,6 @@
 #main-navbar-footer.navbar-default {
     font-size: 14px;
     background-color: rgba(243, 72, 72, 1);
-    border-width: 1px;
-    border-radius: 4px;
 }
 #main-navbar-footer.navbar-default .navbar-nav>li>a {
     color: rgba(255, 255, 255, 1);
@@ -316,4 +312,65 @@
 
 .datos-pago-cuota{
     margin-top: 10px;
+}
+
+#sidebar {
+    width: 125px !important;
+    min-height: 100vh;
+    position: relative;
+    float: left;
+}
+
+#sidebar {
+    /* don't forget to add all the previously mentioned styles here too */
+    background-color: rgba(243, 72, 72, 1);
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar .sidebar-header {
+    background-color: rgba(243, 72, 72, 1);
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    color: white;
+}
+#sidebar ul li a:hover {
+    color: #000000;
+    background-color: rgba(243, 72, 72, 1);
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background-color: rgba(243, 73, 73, 1);
+}
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background-color: rgba(243, 74, 74, 1);
+    color: white;
+}
+
+.navbar {
+    margin-bottom: 0px;
+    border-radius: 0%;
+    border-width: 0;
+}
+
+.container2 {
+    position: relative;
+    float: left;
+    margin-left: 10%;
 }

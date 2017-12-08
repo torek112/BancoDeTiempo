@@ -10,6 +10,7 @@ public interface UserService {
 	UserDto addUser(UserDto userDto);
 
 	void deleteUser(UserDto userDto);
+	void saveUser(UserDto userDto);
 	
 	UserDto findUserById(Long id);
 

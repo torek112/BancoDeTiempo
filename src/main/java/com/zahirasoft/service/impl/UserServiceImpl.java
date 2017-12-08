@@ -60,4 +60,9 @@ public class UserServiceImpl implements UserService{
 		User user = userMapper.convertUserDto2User(userDto);
 		userRepository.delete(user);
 	}
+
+	public void saveUser(UserDto userDto) {
+		User user = userMapper.convertUserDto2User(userDto);
+		userRepository.save(user);
+	}
 }
